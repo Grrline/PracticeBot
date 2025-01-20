@@ -8,7 +8,7 @@ def show_answer(bot):
                          or message.text == data.markups.markup_strings_dictionary['Second question']
                          or message.text == data.markups.markup_strings_dictionary['Third question'])
     def send_answer(message):
-        database = sqlite3.connect("C:/Users/yaros/Private/Practice Project/Project Files/data/database/database.db", check_same_thread=True)
+        database = sqlite3.connect("../database/database.db")
         cursor = database.cursor()
         query = f""" SELECT answer FROM faq WHERE question = "{message.text}" """
         cursor.execute(query)
